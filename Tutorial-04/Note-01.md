@@ -39,7 +39,7 @@ To have more control over the exact string that can be matched by a route parame
     www.example.com/order/2021/and/oct
 ```
 
-## App.Pram()
+## App.Param()
 
 In Express.js, app.param() is a method used to specify middleware functions that will be executed for specific route parameters. It allows you to perform common operations or validations on route parameters before they are used in route handlers. This is useful for keeping your code DRY (Don't Repeat Yourself) and for ensuring that certain tasks are executed consistently for specific parameters.
 
