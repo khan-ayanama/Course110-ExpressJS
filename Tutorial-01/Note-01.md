@@ -1,5 +1,7 @@
 # Express JS Introduction
 
+Express Js is fast, unoponionated, minimalist web framework for Nodejs
+
 ## Installing ExpressJS
 
 ```js
@@ -10,9 +12,26 @@
     npm install express@>=5.0.0-alpha.8
 ```
 
+## ExpressJS Hello World
+
+```js
+    const express = require("express");
+    const app = express();
+
+    const port = 8000;
+
+    app.get("/", (req, res) => {
+    res.send("<h1>Hello World!!</h1>");
+    });
+
+    app.listen(port, () => {
+    console.log(`Server is running one port ${port}`);
+    });
+```
+
 ## BABEL
 
-Babel is a toolchain that is mainly used to convert ECMAScript code backward compatible versionof JS in current and older browser.
+Babel is a toolchain that is mainly used to convert ECMAScript code backward compatible version of JS in current and older browser.
 
 * It transform syntax
 * Polyfill features that are missing in your target environment
@@ -74,3 +93,13 @@ Babel is a toolchain that is mainly used to convert ECMAScript code backward com
             "serve":"node prd/indes.js"
         }
     ```
+
+## Meaning of @
+
+When you use the "@" symbol before the package name in an npm install command like this:
+
+```js
+    npm install @babel/core
+```
+
+You are telling npm to specifically look for the "babel" scope and install the "core" package within that scope. This makes it clear which package you want to install, even if there are other packages with the same name in the npm registry.
