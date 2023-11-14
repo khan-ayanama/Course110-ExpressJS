@@ -58,6 +58,8 @@ Babel is a toolchain that is mainly used to convert ECMAScript code backward com
     npx babel index.js --watch --out-file index-compiled.js
 ```
 
+`Note:` Don't forget to add .babelrc file and define the preset in it.
+
 * `Compile Directory:`
 
 ```js
