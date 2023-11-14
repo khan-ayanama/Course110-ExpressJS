@@ -86,3 +86,58 @@ Optional Route Parameters: You can make route parameters optional by adding a qu
 ```
 
 In this case, visiting /search would still match the route, and query would be set to 'default'.
+
+## req object
+
+In Express.js, the req object, short for request object, represents the HTTP request that is received by your server when a client makes a request. This object provides information about the incoming request, including details about the client, the requested resource, headers, parameters, and more.
+
+Here are some commonly used properties and methods of the req object in Express:
+
+`req.params:`
+
+An object containing properties mapped to the named route parameters. For example, if you have a route like /users/:id, req.params.id would give you the value of the id parameter.
+
+`req.query:`
+
+An object containing a property for each query string parameter in the route. For example, with a route like /search?q=express, req.query.q would give you the value "express."
+
+`req.body:`
+
+An object containing the parsed request body, available if you're using middleware like express.json() or express.urlencoded() to parse the request body.
+
+`req.method:`
+
+A string representing the HTTP method of the request (e.g., "GET," "POST," "PUT," "DELETE").
+
+`req.url:`
+
+A string representing the URL of the request.
+
+`req.headers:`
+
+An object containing the HTTP headers of the request.
+
+`req.cookies:`
+
+An object containing cookies sent by the client.
+
+`req.ip:`
+
+The IP address of the client making the request.
+
+`req.path:`
+
+The path part of the URL.
+
+`req.hostname:`
+
+The hostname of the request.
+
+`req.protocol:`
+
+The protocol used in the request (e.g., "http" or "https").
+
+`req.get(header):`
+
+A method to get the value of a specific header from the request.
+These properties and methods allow you to access various aspects of the incoming request and are essential for processing and handling requests in your Express application. Keep in mind that some properties are populated by middleware, so the presence of certain properties depends on the middleware used in your application.
