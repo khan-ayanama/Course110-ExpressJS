@@ -22,6 +22,10 @@ Routing refers to when client hit certain url then what will server responds.
 * method of an HTTP request method, in lowercase
 * path is a path on server
 * callback is the function executed when the route is matched
+  
+## Nodemon
+
+when you run nodemon file.js directly from the command line, it doesn't have the context of your project's configuration. Nodemon relies on certain settings, and by default, it looks for a package.json file in the current directory to determine how to run your script
 
 ## Methods
 
