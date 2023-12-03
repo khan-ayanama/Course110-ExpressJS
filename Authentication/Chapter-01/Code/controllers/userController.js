@@ -67,6 +67,29 @@ class UserController{
             
         }
     }
+
+    static changeUserPassword = async (req,res) => {
+        const {password,password_confirmation} = req.body;
+        if(password&&password_confirmation){
+            if(password !== password_confirmation){
+                res.send({"status":"failed","message":"Password didn't match"})
+            }else{
+                const salt = await bcrypt.genSalt(10);
+                const newHashPassword = await bcrypt.hash(password,salt)
+                await UserModel.findByIdAndUpdate(req.user._id,{$set:{
+                    password:newHashPassword
+                }})
+                console.log(req.user)
+                res.send({"status":"success","message":"Password changed Succesfully!!"})
+            }
+        }else{
+            res.send({"status":"failed","message":"All Fields are Required"})
+        }
+    }
+
+    static loggedUser = async (req,res) => {
+        res.send({"user":req.user})
+    }
 }
 
 export default UserController;
